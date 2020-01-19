@@ -1,4 +1,5 @@
 README
+
 This program finds duplicates in a given array, add the duplicates and the number of repetitions in a dictionary ex: {'2':3} - 
 value 2 was found 3 times, and calculates the sum of the duplicates
 
