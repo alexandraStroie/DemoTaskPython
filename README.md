@@ -15,10 +15,16 @@ INSTALLATION:
 3.Run the command: python DemoTask.py
 
 4.Enter numbers from command line
-ex of inputs that can be given: [1,2,2,3,4,4,4,5]
+ex of inputs that can be given:
+
+[1,2,2,3,4,4,4,5]
+
 [2,@,@,1,2,%,^,EGR,1111,111,2,^,&]
+
 1 2 2 3 3
+
 1 @ # $ 5 5 5 5
+
 1,2,2,2,2,100, 1000, 1000
 
 5.The output for [2,@,@,1,2,%,^,EGR,1111,111,2,^,&], should be:
