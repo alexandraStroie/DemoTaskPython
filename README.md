@@ -24,5 +24,7 @@ ex of inputs that can be given: [1,2,2,3,4,4,4,5]
 5.The output for [2,@,@,1,2,%,^,EGR,1111,111,2,^,&], should be:
 
 User input was converted to a list of numbers: ['2', '1', '2', '1111', '111', '2']
+
 Dictionary of duplicates found is: {'2': 3}
+
 Sum of duplicates found is: 3
