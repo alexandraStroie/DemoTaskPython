@@ -3,11 +3,11 @@ import re
 # Inputs that can be given to the console: [1,1,2,2,2,2,3,3,2,2,4,5]; [11,22,33,11,222,11,222] [2,@,@,1,2,%,^,EGR,1111,111,2,^,&]; !!,@,1,2,%,^,EGR,1111,111,2,^,&
 # [11.11,22,33,11,222,11,222, 11.11]
 # [11.aa,22,33,11,222,11,222, 11.aa]
-
+# [-11.01,22,33,11,-222,11,222, 11,11.02,11.02,-8, 8,-222]
 # get input from console, and strip all the non-numeric characters
 def get_console_input():
     in_console = input().strip()
-    in_console = re.sub('[^0-9]',' ',in_console)  # remove all non-numeric characters => a string
+    in_console = re.sub('[^-0-9.]',' ',in_console)  # remove all non-numeric characters => a string
     in_console_lst = in_console.split(' ')  # transform in_console to string by splitting it after ' '
 
     #eliminate unnecessary ''
@@ -37,8 +37,8 @@ def find_duplicates(list_in_numbers):
 # calculate the sum of the duplicates
 def sum_of_duplicates(duplicates_dict):
     sum_of_dup = 0
-    for i in duplicates_dict:
-        sum_of_dup = sum_of_dup + duplicates_dict[i]
+    for i in duplicates_dict.keys():
+        sum_of_dup = sum_of_dup + float(i)
     return sum_of_dup
 
 
