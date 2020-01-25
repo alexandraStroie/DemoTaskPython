@@ -1,0 +1,79 @@
+# bubule sort with console input
+# any string is accepted, will turn string into float
+# input ex:
+#[-11.01,22,33,11,-222,11,222, 11,11.02,11.02,-8, 8,-222] [-1,0.01,0.002, 2 ,0, -2,-2, aa, -10,11.02]   [-1,0.01,0.002, 2 ,0, -2,-2, -10,11.02]
+
+# [-1,0.01,0.002,2,0,-2,-2,aa,-10,11.02]
+# [-1 0.01 0.002 2 0 -2 -2 aa -10 11.02]
+# [-1 0.01 0.002 2 0 -2 -2 -10 11.02]
+
+import re
+
+# get input from console, and strip all the non-numeric characters
+def get_console_input():
+    in_console = input().strip()
+    in_console = re.sub('[^-0-9.]',' ',in_console)  # remove all non-numeric characters => a string
+    in_console_lst = in_console.split(' ')  # transform in_console to string by splitting it after ' '
+
+    #eliminate unnecessary ''
+    console_lst_numbers= []
+    for i in range(0,len(in_console_lst)):
+        if in_console_lst[i] != '':
+            console_lst_numbers.append(float(in_console_lst[i])) #converting elements to float
+
+    return console_lst_numbers
+
+
+def bubbleSort(list_in):
+    if len(list_in) == 0:
+        print("The list is empty, please try again")
+    elif len(list_in) == 1:
+        print("The list contains only one element, please try again")
+
+    else:
+        for i in range(0,len(list_in)-1):
+            for j in range(0, len(list_in)-i-1):
+                if list_in[j] > list_in[j+1]:
+                    temp = list_in[j]
+                    list_in[j] = list_in[j+1]
+                    list_in[j+1] = temp
+
+
+            # Driver code to test above
+# ar = ['t','u','t','o','r','i','a','l']
+# ar = [11,22,33,11,222,11,222, 11]
+# ar = [-11.01,22,33,11,222,11,222, 11,11.02]
+# ar = ['11','22','33','11','222','11','222', '11']
+# ar = [-1, 0.01, 0.002, 2, 0, -2, -2, -10, 11.02, 11]
+# bubbleSort(ar)
+# print ("Sorted array is:")
+# for i in range(len(ar)):
+#     print (ar[i])
+
+list_in_console = []
+list_in_console = get_console_input();
+print("list_in",list_in_console)
+
+bubbleSort(list_in_console)
+
+
+print ("Sorted list is:")
+for i in range(0,len(list_in_console)-1):
+    print (list_in_console[i])
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
